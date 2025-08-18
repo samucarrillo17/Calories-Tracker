@@ -3,8 +3,9 @@ import { CardActivities } from './Components/CardActivities';
 import{ Toaster } from 'react-hot-toast';
 import { useMemo, useReducer } from 'react';
 import { ActivityReducer, initialActivityState, } from './Reducers/ActivityReducer';
-import { CakeIcon,ArrowTrendingUpIcon,FireIcon,ArrowTrendingDownIcon } from "@heroicons/react/24/outline"
+import { CakeIcon,ArrowTrendingUpIcon,FireIcon,ArrowTrendingDownIcon,ArrowPathIcon } from "@heroicons/react/24/outline"
 import { CardCalories } from './Components/CardCalories';
+import { FloatButton } from 'antd';
 
 function App() {
   const [state, dispatch] = useReducer(ActivityReducer, initialActivityState);
@@ -15,8 +16,14 @@ function App() {
 
   const calorieBalance = useMemo(() => caloriesConsumed - caloriesBurned, [caloriesConsumed, caloriesBurned]);
 
+  const restarApp = () => {
+    dispatch({ type: 'RESET' });
+  };
+
   return (
     <>
+    <FloatButton className={`${state.activities.length === 0 ? 'opacity-50 cursor-alias' : ''}`}  onClick={restarApp} icon={<ArrowPathIcon />} type='primary' tooltip={<div>Restar App</div>} />
+
     <Toaster
       toastOptions={{
         className: 'bg-white border border-gray-200 shadow-md text-xl text-red-500',

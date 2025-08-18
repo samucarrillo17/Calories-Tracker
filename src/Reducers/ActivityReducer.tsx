@@ -3,7 +3,7 @@ import type { Activity } from "../types";
 export type ActivityActions = 
   | { type: 'ADD_ACTIVITY'; payload: Activity }
   | { type: 'REMOVE_ACTIVITY'; payload: {id:Activity['id']} }
-  | { type: 'UPDATE_ACTIVITY'; payload: {id:Activity['id']} }
+  | { type: 'RESET'} 
   | { type: 'SET_ACTIVE_ID'; payload: {id:Activity['id']} }
 
   export type ActivityState = {
@@ -52,6 +52,10 @@ export type ActivityActions =
         ...state,
         activities: filteredActivities
       };
+    }
+
+    if(action.type === 'RESET') {
+      return initialActivityState;
     }
 
     return state;
