@@ -1,69 +1,33 @@
-# React + TypeScript + Vite
+# 🥗 Calculadora de Calorías
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Una aplicación web desarrollada con **React** y **TypeScript** que permite llevar un registro diario de calorías consumidas y gastadas a través de alimentos y ejercicios.
 
-Currently, two official plugins are available:
+La aplicación no utiliza base de datos, toda la información se maneja en memoria.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🚀 Características
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- ✅ Registrar alimentos con su cantidad de calorías.
+- ✅ Mostrar un panel con las **calorías consumidas**.
+- ✅ Registrar ejercicios realizados con las calorías gastadas.
+- ✅ Mostrar un panel con las **calorías quemadas**.
+- ✅ Panel resumen del **balance calórico del día**.
+- ✅ Notificaciones con **react-hot-toast**.
+- ✅ Estilizado moderno con **Tailwind CSS**.
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+## 🛠️ Tecnologías utilizadas
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- ⚛️ [React](https://reactjs.org/)
+- 🟦 [TypeScript](https://www.typescriptlang.org/)
+- 🎨 [Tailwind CSS](https://tailwindcss.com/)
+- 🔔 [react-hot-toast](https://react-hot-toast.com/)
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## App web en ejecucion
+![calorie-tracker-desktop-design](/public/calorie-tracker-desktop-design)
+![calorie-tracker-mobile-design](/public/calorie-tracker-mobile-design)
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Usa la app
+Para usar la app dale [Click Aqui](http://https://calorie-tracker-react-tsx.netlify.app/ "Calorie Tracker") para ver el sitio en vivo
