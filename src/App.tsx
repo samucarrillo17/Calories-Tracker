@@ -37,16 +37,16 @@ function App() {
           <h1 className='text-4xl font-bold text-orange-500'>Calorie Tracker</h1>
       </header>
 
-     <div className='w-[375px] rounded-2xl md:w-[1200px] md:flex md:flex-wrap md:gap-2'>
+     <div className='w-[375px] rounded-2xl md:w-[1000px] md:flex md:flex-wrap md:gap-2'>
 
-     <section className='bg-white mb-4 rounded-2xl md:w-[590px]'>
+     <section className='bg-white mb-4 rounded-2xl md:w-[500px]'>
       <Form
         dispatch={dispatch}
         state={state}
       />
      </section>
 
-      <section className='bg-white mb-4 rounded-2xl p-2 md:w-[600px] md:p-4'>
+      <section className='bg-white mb-4 rounded-2xl p-2 md:w-[490px] md:p-4'>
         <h2 className='font-medium text-lg mb-4 md:text-2xl'>Calorie Log</h2>
         <CardCalories
           text = "Calories Consumed"

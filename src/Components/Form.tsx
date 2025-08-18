@@ -73,23 +73,23 @@ export function Form({dispatch, state}: FormProps) {
         <button
           type="button"
           onClick={() => handleTypeClick('food')}
-          className={`w-full md:w-1/2 h-13 rounded-lg md:text-xl border-1 transition-all flex gap-3 justify-center items-center cursor-pointer md:h-18 ${
+          className={`w-full md:w-1/2 h-13 rounded-lg md:text-lg border-1 transition-all flex gap-3 justify-center items-center cursor-pointer md:h-16 ${
             formData.type === 'food'
               ? 'border-orange-500 bg-orange-50 text-orange-700'
               : 'border-gray-200 hover:border-gray-300'
           }`}>
-          <CakeIcon className="size-7 md:size-8"  />
+          <CakeIcon className="size-7"  />
           Food
         </button>
         <button
           type="button"
           onClick={() => handleTypeClick('exercise')}
-          className={`w-full md:w-1/2 h-13 rounded-lg md:text-xl border-1 transition-all flex gap-3 justify-center items-center cursor-pointer md:h-18 ${
+          className={`w-full md:w-1/2 h-13 rounded-lg md:text-lg border-1 transition-all flex gap-3 justify-center items-center cursor-pointer md:h-16 ${
             formData.type === 'exercise'
               ? 'border-blue-500 bg-blue-50 text-blue-700'
               : 'border-gray-200 hover:border-gray-300'
           }`}>
-          <ArrowTrendingUpIcon className="size-7 md:size-8" />
+          <ArrowTrendingUpIcon className="size-7 " />
           Exercise
         </button>
       </div>
@@ -136,7 +136,7 @@ export function Form({dispatch, state}: FormProps) {
 
       <button
         type='button'
-        className='bg-orange-500 hover:bg-orange-600 text-white font-medium rounded-md w-full h-12 flex items-center justify-center gap-2 text-xl cursor-pointer md:h-14'
+        className='bg-orange-500 hover:bg-orange-600 text-white font-medium rounded-md w-full h-12 flex items-center justify-center gap-2 text-xl cursor-pointer md:h-12'
         onClick={handleSubmit}
       >
         <PlusIcon className='size-7 text-white' />
