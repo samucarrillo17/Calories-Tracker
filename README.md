@@ -26,8 +26,8 @@ La aplicación no utiliza base de datos, toda la información se maneja en memor
 - 🔔 [react-hot-toast](https://react-hot-toast.com/)
 
 ## App web en ejecucion
-![calorie-tracker-desktop-design](/public/calorie-tracker-desktop-design)
-![calorie-tracker-mobile-design](/public/calorie-tracker-mobile-design)
+![calorie-tracker-desktop-design](/public/calorie-tracker-desktop-design.png)
+![calorie-tracker-mobile-design](/public/calorie-tracker-mobile-design.png)
 
 ## Usa la app
 Para usar la app dale [Click Aqui](http://https://calorie-tracker-react-tsx.netlify.app/ "Calorie Tracker") para ver el sitio en vivo
