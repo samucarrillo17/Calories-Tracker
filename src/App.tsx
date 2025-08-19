@@ -94,7 +94,7 @@ function App() {
             Calories={activity.calories}
             bgColor={activity.type === 'food' ? 'bg-orange-50' : 'bg-blue-50'}
             border={activity.type === 'food' ? 'border-orange-500' : 'border-blue-500'}
-            icon={activity.type === 'food' ? <Apple className='size-8 p-1 bg-orange-500 rounded-full text-white md:size-10'/> : <ArrowTrendingUpIcon className="size-8 bg-blue-500 rounded-full p-1 text-white md:size-10" 
+            icon={activity.type === 'food' ? <Apple className='size-8 p-1 bg-orange-500 rounded-full text-white md:size-9'/> : <ArrowTrendingUpIcon className="size-8 bg-blue-500 rounded-full p-1 text-white md:size-9" 
             />}
             dispatch={dispatch}
             Activities={activity}

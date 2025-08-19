@@ -4,19 +4,19 @@ import type { Categorie } from "../types";
  export const foodCategories:Categorie[] = [
   {
     id: 1,
-    name: "Desayuno",
+    name: "Breakfast",
     category: "food"
     
   },
   {
     id: 2,
-    name: "Almuerzo",
+    name: "Lunch",
     category: "food"
    
   },
   {
     id: 3,
-    name: "Cena",
+    name: "Dinner",
     category: "food"
    
   },
@@ -28,19 +28,19 @@ import type { Categorie } from "../types";
   },
   {
     id: 5,
-    name: "Bebidas",
+    name: "Drinks",
     category: "food"
    
   },
   {
     id: 6,
-    name: "Postres",
+    name: "Dessert",
     category: "food"
    
   },
   {
     id: 7,
-    name: "Frutas",
+    name: "Fruits",
     category: "food"
     
   }
@@ -57,7 +57,7 @@ export const exerciseCategories: Categorie[] = [
   },
   {
     id: 2,
-    name: "Fuerza",
+    name: "Krafttraining",
     category: "exercise"
   
   },
@@ -69,13 +69,13 @@ export const exerciseCategories: Categorie[] = [
   },
   {
     id: 4,
-    name: "Deportes",
+    name: "Sport",
     category: "exercise"
     
   },
   {
     id: 5,
-    name: "Caminar",
+    name: "Walking",
     category: "exercise"
     
   }

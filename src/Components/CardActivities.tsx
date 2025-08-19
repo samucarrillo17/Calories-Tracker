@@ -30,11 +30,11 @@ export function CardActivities({ Activity, Category, Calories, bgColor, border, 
         <div className="flex gap-4 items-center">
           {icon}
           <div className="flex flex-col">
-              <h3 className="font-medium md:text-xl">{Activity}</h3>
+              <h3 className="font-medium md:text-lg">{Activity}</h3>
 
               <div className="flex gap-2">
-                  <p className="text-md font-medium text-gray-500 md:text-lg">{Category} -</p>
-                  <p className="text-md text-gray-500 md:text-lg">{Calories} calories</p>
+                  <p className="text-md font-medium text-gray-500 md:text-md">{Category} -</p>
+                  <p className="text-md text-gray-500 md:text-md">{Calories} calories</p>
               </div>
           </div>
 
