@@ -6,6 +6,7 @@ import { ActivityReducer, initialActivityState, } from './Reducers/ActivityReduc
 import { CakeIcon,ArrowTrendingUpIcon,FireIcon,ArrowTrendingDownIcon,ArrowPathIcon } from "@heroicons/react/24/outline"
 import { CardCalories } from './Components/CardCalories';
 import { FloatButton } from 'antd';
+import { Activity } from 'lucide-react';
 
 function App() {
   const [state, dispatch] = useReducer(ActivityReducer, initialActivityState);
@@ -80,7 +81,7 @@ function App() {
         <h2 className="font-medium text-lg mb-4 md:text-2xl">Activity Log</h2>
         { state.activities.length === 0 ? (
           <div className='flex flex-col justify-center items-center'>
-            <ArrowTrendingUpIcon className="size-7 text-gray-300  md:size-20 text-center" />
+            <Activity className='size-7 text-gray-300  md:size-20 text-center' />
             <p className='text-gray-500 text-lg'>No activities recorded...</p>
           </div>
           

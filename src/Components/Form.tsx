@@ -5,6 +5,7 @@ import { foodCategories, exerciseCategories } from '../data/categories';
 import toast from 'react-hot-toast';
 import type { ActivityActions, ActivityState } from '../Reducers/ActivityReducer';
 import type { Dispatch } from 'react';
+import { Apple } from 'lucide-react';
 
 type FormProps = {
   dispatch: Dispatch<ActivityActions>
@@ -78,7 +79,7 @@ export function Form({dispatch, state}: FormProps) {
               ? 'border-orange-500 bg-orange-50 text-orange-700'
               : 'border-gray-200 hover:border-gray-300'
           }`}>
-          <CakeIcon className="size-7"  />
+          <Apple className='size-7' />
           Food
         </button>
         <button
