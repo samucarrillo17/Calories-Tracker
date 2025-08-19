@@ -3,10 +3,10 @@ import { CardActivities } from './Components/CardActivities';
 import{ Toaster } from 'react-hot-toast';
 import { useMemo, useReducer } from 'react';
 import { ActivityReducer, initialActivityState, } from './Reducers/ActivityReducer';
-import { CakeIcon,ArrowTrendingUpIcon,FireIcon,ArrowTrendingDownIcon,ArrowPathIcon } from "@heroicons/react/24/outline"
+import { ArrowTrendingUpIcon,FireIcon,ArrowTrendingDownIcon,ArrowPathIcon } from "@heroicons/react/24/outline"
 import { CardCalories } from './Components/CardCalories';
 import { FloatButton } from 'antd';
-import { Activity } from 'lucide-react';
+import { Activity, Apple } from 'lucide-react';
 
 function App() {
   const [state, dispatch] = useReducer(ActivityReducer, initialActivityState);
@@ -94,7 +94,7 @@ function App() {
             Calories={activity.calories}
             bgColor={activity.type === 'food' ? 'bg-orange-50' : 'bg-blue-50'}
             border={activity.type === 'food' ? 'border-orange-500' : 'border-blue-500'}
-            icon={activity.type === 'food' ? <CakeIcon className="size-8 p-1 bg-orange-500 rounded-full text-white md:size-10" /> : <ArrowTrendingUpIcon className="size-8 bg-blue-500 rounded-full p-1 text-white md:size-10" 
+            icon={activity.type === 'food' ? <Apple className='size-8 p-1 bg-orange-500 rounded-full text-white md:size-10'/> : <ArrowTrendingUpIcon className="size-8 bg-blue-500 rounded-full p-1 text-white md:size-10" 
             />}
             dispatch={dispatch}
             Activities={activity}
