@@ -1,4 +1,4 @@
-import { ArrowTrendingUpIcon,CakeIcon,PlusIcon } from '@heroicons/react/24/solid'
+import { ArrowTrendingUpIcon,PlusIcon } from '@heroicons/react/24/solid'
 import { useState, useEffect} from 'react'
 import type { Activity,ActivityType } from '../types';
 import { foodCategories, exerciseCategories } from '../data/categories';
