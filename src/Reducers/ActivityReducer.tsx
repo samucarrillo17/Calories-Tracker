@@ -5,15 +5,18 @@ export type ActivityActions =
   | { type: 'REMOVE_ACTIVITY'; payload: {id:Activity['id']} }
   | { type: 'RESET'} 
   | { type: 'SET_ACTIVE_ID'; payload: {id:Activity['id']} }
+   | { type: 'DARK-MODE'; payload: {isDark:boolean} };
 
   export type ActivityState = {
     activities: Activity[];
     activeId: Activity['id']
+     isDark: boolean;
   }
 
   export const initialActivityState: ActivityState = {
     activities: [],
-    activeId: 0
+    activeId: 0,
+     isDark: false
   }
 
   export const ActivityReducer = (state: ActivityState = initialActivityState, action: ActivityActions) => {
@@ -58,6 +61,9 @@ export type ActivityActions =
       return initialActivityState;
     }
 
+    if(action.type === 'DARK-MODE') {
+         return { ...state, isDark: action.payload.isDark };
+     }
     return state;
   }
 

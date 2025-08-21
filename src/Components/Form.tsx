@@ -68,16 +68,16 @@ export function Form({dispatch, state}: FormProps) {
 
   return (
     <form action="">
-    <div className='p-4 flex flex-col gap-4 w-full'>
-      <h2 className='font-medium text-start text-lg md:text-2xl'>Add Activity</h2>
+    <div className='p-4 flex flex-col gap-4 w-full dark:text-gray-300  '>
+      <h2 className='font-medium text-start text-lg md:text-xl '>Add Activity</h2>
       <div className="flex flex-col gap-4 md:flex-row">
         <button
           type="button"
           onClick={() => handleTypeClick('food')}
-          className={`w-full md:w-1/2 h-13 rounded-lg md:text-lg border-1 transition-all flex gap-3 justify-center items-center cursor-pointer md:h-16 ${
+          className={`w-full md:w-1/2 h-13 rounded-lg md:text-lg border-1 transition-all flex gap-3 justify-center items-center cursor-pointer md:h-16  dark:border-2 ${
             formData.type === 'food'
-              ? 'border-orange-500 bg-orange-50 text-orange-700'
-              : 'border-gray-200 hover:border-gray-300'
+              ? 'border-orange-500 bg-orange-50 text-orange-700 dark:text-orange-600 dark:bg-orange-500/10 dark:border-orange-500'
+              : 'border-gray-200 hover:border-gray-300 dark:bg-gray-700 dark:border-gray-600 dark:hover:border-gray-500 transition-colors duration-300'
           }`}>
           <Apple className='size-7' />
           Food
@@ -85,10 +85,10 @@ export function Form({dispatch, state}: FormProps) {
         <button
           type="button"
           onClick={() => handleTypeClick('exercise')}
-          className={`w-full md:w-1/2 h-13 rounded-lg md:text-lg border-1 transition-all flex gap-3 justify-center items-center cursor-pointer md:h-16 ${
+          className={`w-full md:w-1/2 h-13 rounded-lg md:text-lg border-1 transition-all flex gap-3 justify-center items-center cursor-pointer md:h-16 dark:border-2 transition-colors duration-300  ${
             formData.type === 'exercise'
-              ? 'border-blue-500 bg-blue-50 text-blue-700'
-              : 'border-gray-200 hover:border-gray-300'
+              ? 'border-blue-500 bg-blue-50 text-blue-700 dark:text-blue-600 dark:bg-blue-500/10 dark:border-blue-500'
+              : 'border-gray-200 hover:border-gray-300 dark:border-gray-600 dark:hover:border-gray-500 dark:bg-gray-700 '
           }`}>
           <ArrowTrendingUpIcon className="size-7 " />
           Exercise
@@ -96,11 +96,11 @@ export function Form({dispatch, state}: FormProps) {
       </div>
 
       <div className='flex flex-col gap-3'>
-        <label htmlFor="categorie" className='font-bold md:text-lg'>Category</label>
+        <label htmlFor="categorie" className='font-bold md:text-md'>Category</label>
         <select
           name="categorie"
           id="categorie"
-          className="border border-gray-200 p-2 rounded-md w-full h-12"
+          className="border border-gray-200 p-2 rounded-md w-full h-12 dark:bg-gray-700 dark:border-gray-600 transition-colors duration-300"
           value={formData.category}
           onChange={handleCategoryChange}
         >
@@ -112,22 +112,22 @@ export function Form({dispatch, state}: FormProps) {
       </div>
 
       <div className='flex flex-col gap-3'>
-        <label htmlFor="name" className='font-bold md:text-lg'>Name</label>
+        <label htmlFor="name" className='font-bold md:text-md'>Name</label>
         <input
           type="text"
           id="name"
-          className="border border-gray-200 p-2 rounded-md w-full h-12"
+          className="border border-gray-200 p-2 rounded-md w-full h-12 dark:bg-gray-700 dark:border-gray-600 transition-colors duration-300"
           value={formData.name}
           onChange={handleInputChange}
         />
       </div>
 
       <div className='flex flex-col gap-3'>
-        <label htmlFor="calories" className='font-bold md:text-lg'>Calories</label>
+        <label htmlFor="calories" className='font-bold md:text-md'>Calories</label>
         <input
           type="number"
           id="calories"
-          className="border border-gray-200 p-2 rounded-md w-full h-12"
+          className="border border-gray-200 p-2 rounded-md w-full h-12 dark:bg-gray-700 dark:border-gray-600 transition-colors duration-300"
           value={formData.calories === 0 ? '' : formData.calories}
           min={0}
           max={10000}
@@ -137,10 +137,10 @@ export function Form({dispatch, state}: FormProps) {
 
       <button
         type='button'
-        className='bg-orange-500 hover:bg-orange-600 text-white font-medium rounded-md w-full h-12 flex items-center justify-center gap-2 text-xl cursor-pointer md:h-12'
+        className='bg-orange-500 hover:bg-orange-600 text-white font-medium rounded-md w-full h-12 flex items-center justify-center gap-2 text-lg cursor-pointer md:h-12 dark:bg-orange-600 dark:hover:bg-orange-700 transition-colors duration-300'
         onClick={handleSubmit}
       >
-        <PlusIcon className='size-7 text-white' />
+        <PlusIcon className='size-6 text-white' />
         {state.activeId ? 'Update Activity' : formData.type === 'food' ? 'Add Food' : 'Add Exercise'}
         
       </button>

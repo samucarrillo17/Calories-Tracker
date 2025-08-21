@@ -10,7 +10,7 @@ type CardCaloriesProps = {
 
 export function CardCalories({ text, bgColor, border, icon, textColor, calories }: CardCaloriesProps) {
   return (
-    <div className={`${bgColor} border ${border} rounded-2xl  p-4 flex flex-col ${textColor} font-medium mt-4 md:h-35 md:gap-2 ${calories !== 0 ? "" : "opacity-50"}`}>
+    <div className={`${bgColor} border ${border} rounded-2xl  p-4 flex flex-col ${textColor} font-medium mt-4 md:h-35 md:gap-2 ${calories !== 0 ? "" : "opacity-50"} dark:backdrop-blur-md transition-colors duration-300`}>
 
       <div className="flex gap-2 items-center">
         {icon}

@@ -4,3 +4,4 @@
 @theme{
     --font-Inter: Inter, sans-serif;
 }
+@custom-variant dark (&:where(.dark, .dark *));

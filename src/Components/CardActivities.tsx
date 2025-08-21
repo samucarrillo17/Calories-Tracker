@@ -25,24 +25,24 @@ export function CardActivities({ Activity, Category, Calories, bgColor, border, 
     }
 
   return (
-    <div className={`p-2 rounded-lg shadow-sm ${bgColor} mb-4 border-l-4 ${border} flex justify-between items-center md:h-20 md:p-4`}>
+    <div className={`p-2 rounded-lg shadow-sm ${bgColor} mb-4 border-l-4 ${border} flex justify-between items-center md:h-20 md:p-4 dark:backdrop-blur-md transition-colors duration-300`}>
         
         <div className="flex gap-4 items-center">
           {icon}
           <div className="flex flex-col">
-              <h3 className="font-medium md:text-lg">{Activity}</h3>
+              <h3 className="font-medium md:text-lg dark:dark:text-white">{Activity}</h3>
 
               <div className="flex gap-2">
-                  <p className="text-md font-medium text-gray-500 md:text-md">{Category} -</p>
-                  <p className="text-md text-gray-500 md:text-md">{Calories} calories</p>
+                  <p className="text-md font-medium text-gray-500 md:text-sm ">{Category} -</p>
+                  <p className="text-md text-gray-500 md:text-sm">{Calories} calories</p>
               </div>
           </div>
 
         </div>
 
         <div className="flex gap-4">
-          <PencilIcon className={`size-5 text-gray-500 cursor-pointer md:size-7 ${Activities.type === "food" ? "hover:text-orange-500" : "hover:text-blue-500"}`} onClick={handleEdit} />
-          <TrashIcon className={`size-5 text-gray-500 cursor-pointer md:size-7 ${Activities.type === "food" ? "hover:text-orange-500" : "hover:text-blue-500"}`} onClick={handleDelete}/>
+          <PencilIcon className={`size-5 text-gray-500 cursor-pointer md:size-6 ${Activities.type === "food" ? "hover:text-orange-500" : "hover:text-blue-500"}`} onClick={handleEdit} />
+          <TrashIcon className={`size-5 text-gray-500 cursor-pointer md:size-6 ${Activities.type === "food" ? "hover:text-orange-500" : "hover:text-blue-500"}`} onClick={handleDelete}/>
         </div>
         
       
