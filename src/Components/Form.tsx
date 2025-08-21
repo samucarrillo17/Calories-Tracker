@@ -67,17 +67,17 @@ export function Form({dispatch, state}: FormProps) {
   };
 
   return (
-    <form action="">
-    <div className='p-4 flex flex-col gap-4 w-full dark:text-gray-300  '>
+    <form action="" className=''>
+    <div className='p-4 flex flex-col gap-4 w-full dark:text-gray-300 transition-colors duration-300  '> 
       <h2 className='font-medium text-start text-lg md:text-xl '>Add Activity</h2>
       <div className="flex flex-col gap-4 md:flex-row">
         <button
           type="button"
           onClick={() => handleTypeClick('food')}
-          className={`w-full md:w-1/2 h-13 rounded-lg md:text-lg border-1 transition-all flex gap-3 justify-center items-center cursor-pointer md:h-16  dark:border-2 ${
+          className={`w-full md:w-1/2 h-13 rounded-lg md:text-lg border-1 transition-colors duration-300 flex gap-3 justify-center items-center cursor-pointer md:h-16  dark:border-2 ${
             formData.type === 'food'
               ? 'border-orange-500 bg-orange-50 text-orange-700 dark:text-orange-600 dark:bg-orange-500/10 dark:border-orange-500'
-              : 'border-gray-200 hover:border-gray-300 dark:bg-gray-700 dark:border-gray-600 dark:hover:border-gray-500 transition-colors duration-300'
+              : 'border-gray-200 hover:border-gray-300 dark:bg-gray-700 dark:border-gray-600 dark:hover:border-gray-500'
           }`}>
           <Apple className='size-7' />
           Food
@@ -85,7 +85,7 @@ export function Form({dispatch, state}: FormProps) {
         <button
           type="button"
           onClick={() => handleTypeClick('exercise')}
-          className={`w-full md:w-1/2 h-13 rounded-lg md:text-lg border-1 transition-all flex gap-3 justify-center items-center cursor-pointer md:h-16 dark:border-2 transition-colors duration-300  ${
+          className={`w-full md:w-1/2 h-13 rounded-lg md:text-lg border-1  flex gap-3 justify-center items-center cursor-pointer md:h-16 dark:border-2 transition-colors duration-300  ${
             formData.type === 'exercise'
               ? 'border-blue-500 bg-blue-50 text-blue-700 dark:text-blue-600 dark:bg-blue-500/10 dark:border-blue-500'
               : 'border-gray-200 hover:border-gray-300 dark:border-gray-600 dark:hover:border-gray-500 dark:bg-gray-700 '
@@ -95,7 +95,7 @@ export function Form({dispatch, state}: FormProps) {
         </button>
       </div>
 
-      <div className='flex flex-col gap-3'>
+      <div className='flex flex-col gap-3 transition-colors duration-300'>
         <label htmlFor="categorie" className='font-bold md:text-md'>Category</label>
         <select
           name="categorie"
