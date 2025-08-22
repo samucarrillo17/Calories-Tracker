@@ -145,6 +145,7 @@ function App() {
             />}
             dispatch={dispatch}
             Activities={activity}
+            state={state}
           />
           )))}
 

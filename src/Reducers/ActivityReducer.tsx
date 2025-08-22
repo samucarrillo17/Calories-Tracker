@@ -5,7 +5,8 @@ export type ActivityActions =
   | { type: 'REMOVE_ACTIVITY'; payload: {id:Activity['id']} }
   | { type: 'RESET'} 
   | { type: 'SET_ACTIVE_ID'; payload: {id:Activity['id']} }
-   | { type: 'DARK-MODE'; payload: {isDark:boolean} };
+  | { type: 'DARK-MODE'; payload: {isDark:boolean} }
+  | {type:'UPDATE_ACTIVITY';payload:Activity}
 
   export type ActivityState = {
     activities: Activity[];
@@ -23,21 +24,9 @@ export type ActivityActions =
 
     if (action.type === 'ADD_ACTIVITY') {
 
-      let updateActivity : Activity[] = []
-
-      if(state.activeId) {
-        updateActivity = state.activities.map(activity => 
-          activity.id === state.activeId ? action.payload : activity
-        );
-      }else{
-        updateActivity = [...state.activities, action.payload];
-      }
-
-
-
       return {
         ...state,
-        activities:updateActivity,
+        activities:[...state.activities, action.payload],
         activeId:0
       };
     }
@@ -63,6 +52,24 @@ export type ActivityActions =
 
     if(action.type === 'DARK-MODE') {
          return { ...state, isDark: action.payload.isDark };
+     }
+
+     if(action.type === 'UPDATE_ACTIVITY') {
+
+      let updateActivity : Activity[] = []
+
+      if(state.activeId) {
+        updateActivity = state.activities.map(activity => 
+          activity.id === state.activeId ? action.payload : activity
+        );
+      }else{
+        updateActivity = [...state.activities, action.payload];
+      }
+      return {
+        ...state,
+        activities: updateActivity,
+        activeId:0
+      };
      }
     return state;
   }

@@ -18,15 +18,7 @@ export function Form({dispatch, state}: FormProps) {
   const succes = () => toast.success('Saved activity.');
   const error = () => toast.error('Please fill all fields.');
 
-  useEffect(() => {
-    if(state.activeId){
-      const activity = state.activities.filter(act => act.id === state.activeId)[0]
-      
-      if(activity){
-        setFormData(activity);
-      }
-    }
-  },[state.activeId, state.activities]);
+  
   
   const initialState: Activity = {
     id: Date.now(),
@@ -141,7 +133,7 @@ export function Form({dispatch, state}: FormProps) {
         onClick={handleSubmit}
       >
         <PlusIcon className='size-6 text-white' />
-        {state.activeId ? 'Update Activity' : formData.type === 'food' ? 'Add Food' : 'Add Exercise'}
+        {formData.type === 'food' ? 'Add Food' : 'Add Exercise'}
         
       </button>
     </div>
