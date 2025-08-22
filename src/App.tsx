@@ -7,7 +7,7 @@ import { ArrowTrendingUpIcon,FireIcon,ArrowTrendingDownIcon} from "@heroicons/re
 import { CardCalories } from './Components/CardCalories';
 import { FloatButton } from 'antd';
 import { Activity, Apple, EllipsisIcon,Moon,RotateCcw, Sun } from 'lucide-react';
-import './App.css';
+
 
 function App() {
   const [state, dispatch] = useReducer(ActivityReducer, initialActivityState);
@@ -44,12 +44,15 @@ function App() {
       trigger="click"
       type="default"
       icon={<div className='flex items-center justify-center w-full h-full'><EllipsisIcon className='size-5' /></div>}
+      
     >
 
       <FloatButton  
       icon={state.isDark === true ? 
       <div className='flex items-center justify-center w-full h-full'><Sun className='size-5'/></div>: 
-      <div className='flex items-center justify-center w-full h-full'><Moon className='size-5'/></div> } onClick={DarkMode} />
+      <div className='flex items-center justify-center w-full h-full'><Moon className='size-5'/></div> } onClick={DarkMode} 
+      
+      />
 
       <FloatButton icon={<div className='flex items-center justify-center w-full h-full'><RotateCcw className='size-5'  /></div>} 
       onClick={restarApp} />
@@ -57,8 +60,18 @@ function App() {
 
     <Toaster
       toastOptions={{
-        className: 'my-component',
-        duration: 3000,
+        success: {
+          style: {
+            background: '#f0fdf4',
+            color: '#16a34a',
+          },
+        },
+        error: {
+          style: {
+            background: '#fee2e2',
+            color: '#b91c1c',
+          },
+        },
         position: 'top-left',
 
       }}
@@ -113,7 +126,7 @@ function App() {
         { state.activities.length === 0 ? (
           <div className='flex flex-col justify-center items-center'>
             <div className='dark:bg-gray-700/50 rounded-full dark:p-2 mb-2'>
-              <Activity className='size-5 text-gray-300  md:size-10 text-center  dark:text-gray-500' />
+              <Activity className='size-6 text-gray-300  md:size-10 text-center  dark:text-gray-500' />
             </div>
             
             <p className='text-gray-500 md:text-md text-sm'>No activities recorded...</p>

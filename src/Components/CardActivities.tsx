@@ -41,7 +41,7 @@ export function CardActivities({ Activity, Category, Calories, bgColor, border, 
         </div>
 
         <div className="flex gap-4">
-          <PencilIcon className={`size-5 text-gray-500 cursor-pointer md:size-6 ${Activities.type === "food" ? "hover:text-orange-500" : "hover:text-blue-500"}`} onClick={handleEdit} />
+          <PencilIcon className={`size-5 text-gray-500 cursor-pointer md:size-6 ${Activities.type === "food" ? "hover:text-orange-500" : "hover:text-blue-500"}`} onClick={handleEdit} href="#form" />
           <TrashIcon className={`size-5 text-gray-500 cursor-pointer md:size-6 ${Activities.type === "food" ? "hover:text-orange-500" : "hover:text-blue-500"}`} onClick={handleDelete}/>
         </div>
         

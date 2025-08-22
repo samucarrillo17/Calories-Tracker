@@ -58,7 +58,7 @@ export type ActivityActions =
     }
 
     if(action.type === 'RESET') {
-      return initialActivityState;
+      return {...initialActivityState, isDark: state.isDark};
     }
 
     if(action.type === 'DARK-MODE') {
