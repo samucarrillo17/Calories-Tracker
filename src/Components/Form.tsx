@@ -1,19 +1,19 @@
 import { ArrowTrendingUpIcon,PlusIcon } from '@heroicons/react/24/solid'
-import { useState, useEffect} from 'react'
+import { useState} from 'react'
 import type { Activity,ActivityType } from '../types';
 import { foodCategories, exerciseCategories } from '../data/categories';
 import toast from 'react-hot-toast';
-import type { ActivityActions, ActivityState } from '../Reducers/ActivityReducer';
+import type { ActivityActions } from '../Reducers/ActivityReducer';
 import type { Dispatch } from 'react';
 import { Apple } from 'lucide-react';
 
 type FormProps = {
   dispatch: Dispatch<ActivityActions>
-  state: ActivityState
+  
 };
 
 
-export function Form({dispatch, state}: FormProps) {
+export function Form({dispatch}: FormProps) {
 
   const succes = () => toast.success('Saved activity.');
   const error = () => toast.error('Please fill all fields.');

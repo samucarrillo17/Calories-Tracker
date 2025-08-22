@@ -87,7 +87,7 @@ function App() {
      <section className="bg-white mb-4 rounded-2xl md:w-[500px] dark:bg-white/5 dark:backdrop-blur-md dark:border dark:border-white/20">
       <Form
         dispatch={dispatch}
-        state={state}
+        
       />
      </section>
 
