@@ -5,8 +5,7 @@ import { useEffect, useMemo, useReducer} from 'react';
 import { ActivityReducer, initialActivityState, } from './Reducers/ActivityReducer';
 import { ArrowTrendingUpIcon,FireIcon,ArrowTrendingDownIcon} from "@heroicons/react/24/outline"
 import { CardCalories } from './Components/CardCalories';
-import { FloatButton } from 'antd';
-import { Activity, Apple, EllipsisIcon,Moon,RotateCcw, Sun } from 'lucide-react';
+import { Activity, Apple,Moon,RotateCcw, Sun } from 'lucide-react';
 
 
 function App() {
@@ -39,24 +38,6 @@ function App() {
 
   return (
     <>
-   
-    <FloatButton.Group
-      trigger="click"
-      type="default"
-      icon={<div className='flex items-center justify-center w-full h-full'><EllipsisIcon className='size-5' /></div>}
-      
-    >
-
-      <FloatButton  
-      icon={state.isDark === true ? 
-      <div className='flex items-center justify-center w-full h-full'><Sun className='size-5'/></div>: 
-      <div className='flex items-center justify-center w-full h-full'><Moon className='size-5'/></div> } onClick={DarkMode} 
-      
-      />
-
-      <FloatButton icon={<div className='flex items-center justify-center w-full h-full'><RotateCcw className='size-5'  /></div>} 
-      onClick={restarApp} />
-    </FloatButton.Group>
 
     <Toaster
       toastOptions={{
@@ -72,17 +53,32 @@ function App() {
             color: '#b91c1c',
           },
         },
-        position: 'top-left',
+        position: 'top-center',
 
       }}
     />
-    <main className='bg-orange-50 min-h-screen flex flex-col items-center md:justify-start md:items-center md:px-2 font-Inter dark:bg-gray-900 transition-colors duration-300'>
-        <header className='flex items-center gap-2 justify-center p-4 '>
+    <main className='bg-orange-50 min-h-scre font-Inter dark:bg-gray-900 transition-colors duration-300 flex flex-col items-center'>
+
+    <div className='flex flex-col w-full'>
+
+      
+      <header className='flex justify-between p-6 sticky top-0 z-40  dark:backdrop-blur-md  items-center backdrop-blur-md w-full'>
+
+        <div className='flex gap-2 items-center'>
           <img src="apple.svg" className='bg-orange-500 rounded-full size-10' alt="" />
-          <h1 className='text-4xl font-bold text-orange-500'>Calorie Tracker</h1>
+          <h1 className='md:text-4xl font-bold text-orange-500 text-lg'>Calorie Tracker</h1>
+        </div>
+
+        <div className='flex gap-4'>
+          <button className='bg-white p-2 rounded-lg hover:bg-gray-100 cursor-pointer dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600 transition-colors duration-300' onClick={DarkMode}> {state.isDark === true ? <Sun className='size-5'/> : <Moon className='size-5'/>}      </button>
+
+          <button className='bg-white p-2 rounded-lg hover:bg-gray-100 cursor-pointer dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600 transition-colors duration-300' onClick={restarApp}> <RotateCcw className='size-5'/></button>
+          
+        </div>
+          
       </header>
 
-     <div className='w-[375px] rounded-2xl md:w-[1000px] md:flex md:flex-wrap md:gap-2 '>
+     <div className='rounded-2xl md:flex md:flex-wrap md:gap-2 md:justify-center '>
 
      <section className="bg-white mb-4 rounded-2xl md:w-[500px] dark:bg-white/5 dark:backdrop-blur-md dark:border dark:border-white/20">
       <Form
@@ -91,7 +87,7 @@ function App() {
       />
      </section>
 
-      <section className='bg-white mb-4 rounded-2xl p-2 md:w-[490px] md:p-4 dark:bg-white/5 dark:backdrop-blur-md dark:border dark:border-white/20 dark:text-gray-300'>
+      <section className='bg-white mb-4 rounded-2xl p-2 md:w-[500px] md:p-4 dark:bg-white/5 dark:backdrop-blur-md dark:border dark:border-white/20 dark:text-gray-300'>
         <h2 className='font-medium text-lg mb-4 md:text-xl'>Calorie Log</h2>
         <CardCalories
           text = "Calories Consumed"
@@ -121,7 +117,7 @@ function App() {
         />
       </section>
 
-     <section className='bg-white rounded-2xl p-2 w-full md:p-4 dark:bg-white/5 dark:backdrop-blur-md dark:border dark:border-white/20 dark:text-gray-300'>
+     <section className='bg-white rounded-2xl p-2 md:w-[1000px] md:p-4 dark:bg-white/5 dark:backdrop-blur-md dark:border dark:border-white/20 dark:text-gray-300'>
         <h2 className="font-medium text-lg mb-4 md:text-xl">Activity Log</h2>
         { state.activities.length === 0 ? (
           <div className='flex flex-col justify-center items-center'>
@@ -153,19 +149,7 @@ function App() {
         
      </section>
 
-    
-
-
-
-
-
-
-
-
-
-
-
-
+   </div>
 
  </div>
 
