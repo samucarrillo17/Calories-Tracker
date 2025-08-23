@@ -24,7 +24,7 @@ type CardActivities = {
 
 export function CardActivities({ Activity, Category, Calories, bgColor, border, icon, dispatch, Activities,state }: CardActivities) {
 
-  const succes = (msg:string) => toast.error(msg);
+  const succes = (msg:string) => toast.success(msg);
 
   const error = (msg:string) => toast.error(msg);
 
