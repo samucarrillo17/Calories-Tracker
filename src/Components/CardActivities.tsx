@@ -90,6 +90,7 @@ export function CardActivities({ Activity, Category, Calories, bgColor, border, 
         return;
       }
         dispatch({ type: 'UPDATE_ACTIVITY', payload: editData });
+        succes("Activity updated successfully!");
         setIsOpen(false);
     }
 
