@@ -15,8 +15,8 @@ type FormProps = {
 
 export function Form({dispatch}: FormProps) {
 
-  const succes = () => toast.success('Saved activity.');
-  const error = () => toast.error('Please fill all fields.');
+  const succes = (msg:string) => toast.success(msg);
+  const error = (msg:string) => toast.error(msg);
 
   
   
@@ -41,20 +41,46 @@ export function Form({dispatch}: FormProps) {
     setFormData(prev => ({ ...prev, category: e.target.value }));
   };
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { id, value } = e.target;
-    setFormData(prev => ({ ...prev, [id]: id === 'calories' ? Number(value) : value }));
-  };
+  const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const value = e.target.value;
+
+  const isValid = /^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]*$/.test(value);
+
+  if (isValid) {
+    setFormData({ ...formData, name: value });
+  }else{
+    error("Fill in the fields with valid values.");
+  }
+};
+
+  const handleCaloriesChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+      
+      const value = e.target.value;
+
+     
+      if (e.nativeEvent instanceof ClipboardEvent) {
+        e.preventDefault();
+        return;
+      }
+      const isValid = value === '' || (/^\d+$/.test(value) && Number(value) >= 0)
+      
+      if (!isValid) {
+        error("Negative numbers are not allowed.");
+        return;
+      }else{
+        setFormData({ ...formData, calories: Number(value) });
+      }
+};
 
   const handleSubmit = () => {
-    if (!formData.category || !formData.name || !formData.calories) {
-
-        error();
-        return;
+    if (!formData.type || !formData.category || !formData.name || formData.calories <= 0) {
+      error("Please fill all fields.");
+      return;
     }
+
     dispatch({ type: 'ADD_ACTIVITY', payload: { ...formData} });
     setFormData(initialState);
-    succes()
+    succes("Activity added successfully!");
     
   };
 
@@ -110,7 +136,7 @@ export function Form({dispatch}: FormProps) {
           id="name"
           className="border border-gray-200 p-2 rounded-md w-full h-12 dark:bg-gray-700 dark:border-gray-600 transition-colors duration-300"
           value={formData.name}
-          onChange={handleInputChange}
+          onChange={handleNameChange}
         />
       </div>
 
@@ -123,7 +149,7 @@ export function Form({dispatch}: FormProps) {
           value={formData.calories === 0 ? '' : formData.calories}
           min={0}
           max={10000}
-          onChange={handleInputChange}
+          onChange={handleCaloriesChange}
         />
       </div>
 
