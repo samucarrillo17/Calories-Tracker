@@ -26,7 +26,7 @@ Una aplicación web desarrollada con **React **y **TypeScript** que permite llev
 - ✅ Transiciones suaves y feedback visual para mejorar la experiencia del usuario.
 
 ## 🧩 Tecnologías utilizadas
-⚛️-  React — Librería principal para construir la interfaz.
+-⚛️ React — Librería principal para construir la interfaz.
 
 - 🟦 TypeScript — Tipado estático para mayor seguridad y claridad.
 
@@ -37,13 +37,13 @@ Una aplicación web desarrollada con **React **y **TypeScript** que permite llev
 - 🧠 Headless UI — Componente modal accesible y personalizable.
 
 ## 🖼️ Diseño visual
-- 📱** Responsive: **Adaptado para pantallas móviles, tablets y escritorio.
+- 📱**Responsive:** Adaptado para pantallas móviles, tablets y escritorio.
 
 - 🌗 **Modo oscuro:** Activable desde la interfaz, con estilos adaptados.
 
-- 🧊** Glassmorphism:** Aplicado en el navbar y en el modal de edición, tanto en modo claro como oscuro.
+- 🧊**Glassmorphism:** Aplicado en el navbar y en el modal de edición, tanto en modo claro como oscuro.
 
-- 📌 **Navbar sticky: **Siempre visible para facilitar la navegación y el acceso a funciones clave.
+- 📌 **Navbar sticky:** Siempre visible para facilitar la navegación y el acceso a funciones clave.
 
 ## 🧪 Validaciones implementadas
 - 🔒 El campo de nombre no permite números ni cadenas vacías.
@@ -57,8 +57,8 @@ Una aplicación web desarrollada con **React **y **TypeScript** que permite llev
 ##   Vista previa
 ![calorie-tracker-desktop-design](/public/calorie-tracker-desktop-design.png)
 ![calorie-tracker-darkmode-desktop-design](/public/desktop-darkmode.png)
-<img src="./public/calorie-tracker-mobile-design.png" alt="Diseño móvil" width="400" />
-<img src="./public/calorie-tracker-darkmode-mobile.png" alt="Diseño móvil" width="400" />
+<img src="./public/calorie-tracker-mobile-design.png" alt="Diseño móvil" width="300" />
+<img src="./public/calorie-tracker-darkmode-mobile.png" alt="Diseño móvil" width="300" />
 ## 🌐 Usa la app
 👉 [Calorie-Tracker-Web](http://https://calorie-tracker-react-tsx.netlify.app/ "Calorie-Tracker-Web")
 
