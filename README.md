@@ -26,7 +26,7 @@ Una aplicación web desarrollada con **React **y **TypeScript** que permite llev
 - ✅ Transiciones suaves y feedback visual para mejorar la experiencia del usuario.
 
 ## 🧩 Tecnologías utilizadas
--⚛️ React — Librería principal para construir la interfaz.
+- ⚛️ React — Librería principal para construir la interfaz.
 
 - 🟦 TypeScript — Tipado estático para mayor seguridad y claridad.
 
