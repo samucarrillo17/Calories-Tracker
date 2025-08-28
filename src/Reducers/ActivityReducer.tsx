@@ -14,10 +14,20 @@ export type ActivityActions =
      isDark: boolean;
   }
 
+const localStorageActivities = ():Activity[]=>{
+    const activities = localStorage.getItem('activities')
+    return activities ? JSON.parse(activities) : []
+}
+
+const localStorageIsDark = ():boolean=>{
+  const isDark = localStorage.getItem('isDark')
+  return isDark ? JSON.parse(isDark) : false
+}
+
   export const initialActivityState: ActivityState = {
-    activities: [],
+    activities: localStorageActivities(),
     activeId: 0,
-     isDark: false
+     isDark: localStorageIsDark()
   }
 
   export const ActivityReducer = (state: ActivityState = initialActivityState, action: ActivityActions) => {

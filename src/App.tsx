@@ -20,6 +20,7 @@ function App() {
   
 
   useEffect(() => {
+    localStorage.setItem('isDark', JSON.stringify(state.isDark));
     const root = document.documentElement;
       if (state.isDark) {
         root.classList.add('dark');
@@ -27,6 +28,11 @@ function App() {
         root.classList.remove('dark');
         }
     }, [state.isDark]);
+
+
+  useEffect(() => {
+    localStorage.setItem('activities', JSON.stringify(state.activities))
+  }, [state.activities])
 
   const DarkMode = () => {
    dispatch({ type: 'DARK-MODE' , payload: { isDark: !state.isDark } });
